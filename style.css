@@ -429,6 +429,24 @@ span{
     border: .2rem solid var(--main-color);
     border-radius: .6rem;
     padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover:before{
+    width: 100%;
 }
 
 .skills-content .progress{
@@ -482,4 +500,67 @@ span{
 .skills-content 
 .progress:nth-child(4) .bar span{
     width: 40%;
+}
+
+.skills-column:nth-child(2) 
+.skills-content 
+.progress:nth-child(1) .bar span{
+    width: 70%;
+}
+
+.skills-column:nth-child(2) 
+.skills-content 
+.progress:nth-child(2) .bar span{
+    width: 40%;
+}
+
+.skills-column:nth-child(2) 
+.skills-content 
+.progress:nth-child(3) .bar span{
+    width: 40%;
+}
+
+.skills-column:nth-child(2) 
+.skills-content 
+.progress:nth-child(4) .bar span{
+    width: 40%;
+}
+
+
+/* contact */
+
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field{
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea{
+    width: 92%;
+    height: 29%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .9rem;
+    border: .2rem solid var(--main-color);
 }
