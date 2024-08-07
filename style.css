@@ -93,6 +93,10 @@ section{
     line-height: 1.3;
 }
 
+.home-content h1 span{
+    color: var(--text-color);
+}
+
 .home-content .text-animate{
     position: relative;
     width: 32.8rem;
@@ -258,6 +262,7 @@ section{
 }
 
 span{
+    
     color: var(--main-color);
 }
 
@@ -548,19 +553,109 @@ span{
 }
 
 .contact form .input-box .input-field{
-    position: relative;
+    position:relative;
     width: 49%;
     margin: .8rem 0;
 }
 
 .contact form .input-box .input-field input,
 .contact form .textarea-field textarea{
-    width: 92%;
+    width: 89%;
     height: 29%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
     background: transparent;
-    border-radius: .9rem;
+    border-radius: 1.9rem;
     border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color: var(--text-color);
+}
+
+/* .contact form .focus{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: 1rem;
+    z-index: -1;
+    transition: .5s;
+} */
+
+/* .contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus{
+        width: 95%;
+} */
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea{
+    resize: none;
+}
+
+.contact form .btn-box.btns .btn{
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before{
+    width: 100%;
+}
+
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+.footer-iconTop a:hover{
+    color: var(--main-color);
 }
