@@ -131,7 +131,7 @@ section{
     width: 15rem;
     height: 100%;
     background: var(--main-color);
-    border-radius: .8rem;
+    border-radius: 2.8rem;
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: .1rem;
@@ -245,19 +245,25 @@ section{
 
 /* about aection */
 
+#about{
+        min-height: 100vh;
+        padding: 0rem 9% 2rem;
+    
+}
+
 .about{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0rem;
     background: var(--second-bg-color);
     padding-bottom: 6rem;
 }
 
 .heading{
     font-size: 5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 13rem;
     text-align: center;
 }
 
@@ -326,9 +332,21 @@ span{
     align-items: center;
     flex-direction: column;
     min-height: auto;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
 }
 
+.heading1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.education1{
+   
+        min-height: 101vh;
+        padding: 1rem 4% 3rem;
+    
+}
 .education .education-row{
     display: flex;
     flex-wrap: wrap;
@@ -364,11 +382,13 @@ span{
     border-radius: 50%;
 }
 
+
+
 .education-content .content{
     position: relative;
     padding: 1.5rem;
     border: .2rem solid var(--main-color);
-    margin-bottom: 2rem;
+    margin-bottom: -1rem;
     overflow: hidden;
 }
 
@@ -386,6 +406,7 @@ span{
 
 .education-content .content:hover:before{
     width: 100%;
+    
    
 }
 
@@ -396,7 +417,7 @@ span{
 }
 
 .education-content .content .year i{
-    padding-right:  .5rem;
+    padding-right:  .3rem;
 }
 
 .education-content .content h3{
@@ -407,6 +428,7 @@ span{
     font-size: 1.6rem;
     padding-top: .5rem;
 }
+
 
 .skills{
     min-height: auto;
@@ -419,6 +441,15 @@ span{
     flex-wrap: wrap;
     gap: 5rem;
 } 
+
+.skills1{
+   
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+
+}
 
 .skills-row .skills-column{
     flex: 1 1 40rem;
@@ -455,7 +486,7 @@ span{
 }
 
 .skills-content .progress{
-    padding: 1rem 0;
+    padding: 0rem 0;
 }
 
 .skills-content .progress h3{
@@ -597,6 +628,7 @@ span{
 .contact form .textarea-field{
     position: relative;
     margin: .8rem 0 2.7rem;
+    padding-left: 3%;
     display: flex;
 }
 
