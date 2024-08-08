@@ -41,7 +41,11 @@ body{
     justify-content:space-around;
     align-items: center;
     z-index: 100;
+    transition: .3s;
+}
 
+.header.sticky{
+    background: var(--bg-color);
 }
 
 .logo{
@@ -690,4 +694,55 @@ span{
 
 .footer-iconTop a:hover{
     color: var(--main-color);
+}
+
+/* breakpoints */
+
+@media(max-width : 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width : 991px){
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home{
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px){
+    .header {
+        background: var(--bg-color);
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
 }
