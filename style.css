@@ -89,6 +89,7 @@ section{
 
 .home-content{
     max-width: 60rem;
+    z-index: 99;
 }  
 
 .home-content h1{
@@ -111,6 +112,27 @@ section{
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+
+}
+
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+
 }
 
 .home-content p{
@@ -313,11 +335,11 @@ span{
 }
 
 .about-content h3{
-    font-size: 2.6rem;
+    font-size: 3rem;
 }
 
 .about-content p{
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin: 2rem 0 3rem;
 }
 
@@ -526,14 +548,14 @@ span{
 
 .skills-column:nth-child(1) 
 .skills-content 
-.progress:nth-child(2) .bar span{
-    width: 65%;
+.progress:nth-child(2) .bar span {
+    width: 75%;
 }
 
 .skills-column:nth-child(1) 
 .skills-content 
 .progress:nth-child(3) .bar span{
-    width: 60%;
+    width: 75%;
 }
 
 .skills-column:nth-child(1) 
@@ -545,25 +567,25 @@ span{
 .skills-column:nth-child(2) 
 .skills-content 
 .progress:nth-child(1) .bar span{
-    width: 70%;
+    width: 60%;
 }
 
 .skills-column:nth-child(2) 
 .skills-content 
 .progress:nth-child(2) .bar span{
-    width: 40%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) 
 .skills-content 
 .progress:nth-child(3) .bar span{
-    width: 40%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) 
 .skills-content 
 .progress:nth-child(4) .bar span{
-    width: 40%;
+    width: 60%;
 }
 
 
@@ -734,15 +756,141 @@ span{
     .navbar {
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -100%;
         width: 100%;
-        background: var(--bg-color);
+        background: var(--main-color);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .20s ease;
+        transition-delay: .20s;
+
+    }
+
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .25s;
     }
 
     .navbar a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .home-imgHover {
+        pointer-events: none;
+        /* background: var(--bg-color); */
+        opacity: .6;
     }
 }
+
+@media (max-width: 520px){
+    html{
+        font-size: 50%;
+    }
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci{
+        width: 160px;
+    }
+
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 462px){
+     .home-content h1{
+        font-size: 5.2rem;
+     }
+
+     .education{
+        padding: 10rem 4% 5rem 5%;
+     }
+
+     .contact form .input-box .input-field{
+        width: 100%;
+     }
+
+    .footer{
+        flex-direction: column-reverse;
+    } 
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 371px){
+    .home{
+        justify-content: center;
+    }
+
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+}
+
+@keyframes homeBgText{
+    0%,10%,100% {
+        background-position: -33rem 0;
+    }
+
+    65%,85%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%,10%,100% {
+        width: 0;
+    }
+
+    65%,78%,85%{
+        width: 100%;
+        opacity: 1;
+    }
+    75%,
+    81%{
+        opacity: 0;
+    }
+}
+
