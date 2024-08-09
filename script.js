@@ -4,6 +4,7 @@ let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick =() => {
     menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 }
 
 
@@ -32,4 +33,8 @@ window.onscroll = () =>{
 
     //sticky header
     header.classList.toggle('sticky', window.scrollY > 100);
+
+    //remove toggle icon
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
 }
