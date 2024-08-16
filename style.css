@@ -124,6 +124,10 @@ section{
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem 0;
+   
+}
+
+.home.show-animate .home-content .text-animate h3{
     animation: homeBgText 6s linear infinite;
     animation-delay: 2s;
 
@@ -138,14 +142,18 @@ section{
     height: 100%;
     border-right: 2px solid var(--main-color);
     z-index: -1;
+    
+
+}
+
+.home.show-animate .home-content .text-animate h3::before{
     animation: homeCursorText 6s linear infinite;
     animation-delay: 2s;
-
 }
 
 .home-content p{
     position: relative;
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin: 2rem 0 4rem;
 }
 
@@ -298,6 +306,7 @@ section{
 
 .heading{
     position: relative;
+    
     font-size: 5rem;
     margin-bottom: 13rem;
     text-align: center;
@@ -346,10 +355,13 @@ span{
 }
 
 .about-content h3{
+    position: relative;
+    display: inline-block;
     font-size: 3rem;
 }
 
 .about-content p{
+    position: relative;
     font-size: 2rem;
     margin: 2rem 0 3rem;
 }
@@ -395,11 +407,14 @@ span{
     }
 
 .education-column .title{
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }    
 
 .education-column .education-box{
+    position: relative;
     border-left: .2rem solid var(--main-color);
 }
 
@@ -473,6 +488,12 @@ span{
     background: var(--second-bg-color);
 }
 
+.skills h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .skills .skills-row{
     display: flex;
     flex-wrap: wrap;
@@ -493,8 +514,14 @@ span{
 }
 
 .skills-column .title{
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem;
+}
+
+.skills-column .skills-box{
+    position: relative;
 }
 
 .skills-box .skills-content{
@@ -607,6 +634,12 @@ span{
     padding-bottom: 7rem;
 }
 
+.contact h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .contact form{
     max-width: 70rem;
     margin: 0 auto;
@@ -686,6 +719,11 @@ span{
     background: var(--second-bg-color);
 }
 
+.footer-text,
+.footer-iconTop{
+    position: relative;
+}
+
 .footer-text p{
     font-size: 1.6rem;
 }
@@ -736,7 +774,7 @@ span{
     right: 0;
     width: 100%;
     height: 100%;
-    background: yellowgreen;
+    background: var(--bg-color);
     z-index: 98;
 }
 
@@ -750,6 +788,31 @@ span{
 .home.show-animate .animate{
     animation: showRight 1s ease forwards;
     animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll{
+    transition: 1s ease;
+    transition-delay: calc(.3 / var(--i));
+    animation: none;
+}
+
+section:nth-child(odd) .animate.scroll,
+.footer .animate.scroll{
+    background: var(--second-bg-color);
+}
+
+.education .education-box .animate.scroll {
+    width: 105%;
+}
+
+
+.about.show-animate .animate.scroll,
+.education.show-animate .animate.scroll,
+.skills.show-animate .animate.scroll,
+.contact.show-animate .animate.scroll,
+.footer.show-animate .animate.scroll{
+    transition-delay: calc(.3 * var(--i));
+    width: 0;
 }
 
 /* breakpoints */
@@ -775,6 +838,12 @@ span{
 
     .footer {
         padding: 2rem 4%;
+    }
+}
+
+@media (max-width : 850px){
+    .animate.home-img{
+        width: 55%;
     }
 }
 
